@@ -1,0 +1,292 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "微软雅黑";
+  box-sizing: border-box;
+}
+.top_bg {
+  width: 100%;
+  background: #fff;
+}
+.top {
+  height: 90px;
+  width: 1200px;
+  margin: auto;
+  background: #fff;
+}
+.logo {
+  margin-top: 26px;
+  float: left;
+}
+.top ul {
+  float: left;
+  margin-left: 35px;
+}
+.top a {
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+.top li {
+  height: 90px;
+  width: 80px;
+  line-height: 90px;
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+.top a:hover li {
+  box-sizing: border-box;
+  border-bottom: 3px solid red;
+  margin-bottom: 0px;
+  color: red;
+}
+.ac{
+	  box-sizing: border-box;
+  border-bottom: 3px solid red;
+  margin-bottom: 0px;
+  color: red;
+}
+.li_xuanzhong {
+  box-sizing: border-box;
+  border-bottom: 3px solid red;
+  margin-bottom: 0px;
+  color: red;
+}
+.top span {
+  font-size: 16px;
+  margin-left: 15px;
+  float: left;
+  display: inline-block;
+  background-image: url(../img/phone.png);
+  background-size: 20px 20px;
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  line-height: 90px;
+}
+.con {
+  width: 100%;
+}
+.swiper-container {
+  width: 100%;
+  height: 358px;
+}
+.con_2 {
+  padding-top: 10px;
+  width: 1200px;
+  text-align: center;
+  
+  margin: auto;
+}
+.con_2 p:first-child {
+  font-size: 25px;
+}
+.con_2 p:first-child span {
+  font-size: 32px;
+  color: red;
+}
+.con_2 p:nth-child(2) {
+  margin-top: 15px;
+  font-size: 16px ;
+  color: #999999;
+}
+.ul_1 {
+  width: 1065px;
+  margin: auto;
+  margin-top: 58px;
+}
+.ul_1 li {
+  list-style: none;
+  float: left;
+  width: 260px;
+  height: 322px;
+  background-image: url(../img/headico.png);
+  background-repeat: no-repeat;
+  text-align: center;
+  font-size: 16px;
+}
+.ul_1 li:nth-child(2){
+	background-image: url(../img/teach.png);
+}
+.ul_1 li:nth-child(3){
+	background-image: url(../img/server.png);
+}
+.ul_1 li:nth-child(1):hover{
+	background-image: url(../img/headico2.png);
+}
+.ul_1 li:nth-child(2):hover{
+	background-image: url(../img/teach2.png);
+}
+.ul_1 li:nth-child(3):hover{
+	background-image: url(../img/server2.png);
+}
+
+.ul_1 li:nth-child(2) {
+  margin: auto 138px;
+}
+.ul_1 span {
+  display: block;
+  margin-top: 320px;
+}
+.ul_2 {
+  width: 1200px;
+  margin: auto;
+  margin-top: 30px;
+}
+.ul_2 li {
+  list-style: none;
+  float: left;
+  width: 365px;
+  font-size: 16px;
+  text-align: center;
+  color: #666666;
+  margin: auto 15px;
+}
+.yuyue {
+  margin: auto;
+  display: block;
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: red;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  margin-top: 20px;
+ 
+}
+#tex1 {
+	text-align: center;
+  font-size: 25px;
+  margin-top: 20px;
+  
+}
+#tex1 span {
+  font-size: 33px;
+  color: red;
+}
+.contex_1 {
+  width: 1050px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 25px;
+}
+.contex_1 li {
+  list-style: none;
+  float: left;
+  width: 210px;
+  height: 50px;
+  border: 1px solid red;
+  font-size: 18px;
+  line-height: 50px;
+  color: red;
+  border-radius: 8px;
+  margin: auto 20px;
+  text-align: center;
+}
+.contex_2 {
+  width: 520px;
+  margin: auto;
+  margin-top: 30px;
+ 
+}
+.contex_2 li {
+  list-style: none;
+  float: left;
+  width: 128px;
+  height: 34px;
+  border: 1px solid red;
+  font-size: 12px;
+  line-height: 34px;
+  color: red;
+  border-radius: 8px;
+  margin: auto 10px;
+  text-align: center;
+}
+#contex_2_2{
+	display: none;
+	width: 800px;
+}
+#contex_2_3{
+	display: none;
+	width: 800px;
+}
+#contex_2_4{
+	display: none;
+	width: 693px;
+}
+.contex .c_active {
+  background-color: red;
+  color: #fff;
+}
+.contex_3_1 {
+  width: 1200px;
+  margin: auto;
+}
+.contex_3_1 ul{
+	margin: auto;
+}
+.contex_3_1 li {
+  list-style: none;
+  float: left;
+  width: 184px;
+}
+.contex_3_1 li p {
+  padding-top: 0px ;
+  color: #FDB62B;
+  text-align: center;
+}
+.contex_3_1 li div {
+	box-shadow:8px 5px 20px #ccc;
+  text-align: left;
+  font-size: 14px;
+  color: #fff;
+  padding: 30px 20px;
+  width: 170px;
+  height: 190px;
+  background-color: #FDB62B;
+  margin: auto;
+}
+
+.con_3 ul li:hover{
+	
+	transform: scale(1.1);
+	transition: all 0.5s; 
+}
+.con_3 ul li:nth-child(2):hover{
+	width: ;
+	transition: all 1s; 
+}
+.pic1 img:hover{
+	
+	width: 200px;
+	transition: all 0.5s;
+}
+.pic2 img:hover{
+	width: 130px;
+	transition: all 0.5s;
+} 
+.pic3 img:hover{
+	width: 262px;
+	transition: all 0.5s;
+}
+.pic4 img:hover{
+	width: 155px;
+	transition: all 0.5s;
+}
+.pic5 img:hover{
+	width: 180px;
+	transition: all 0.5s;
+}
+.wH(@a,@b){
+	width: @a;
+	height: @b;
+}
+.cebian{
+	.weixin{
+		.wH("60px","60px");
+	}
+}

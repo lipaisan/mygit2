@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>课程体系</title>	
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/subject.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"/>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+				<style type="text/css">
+			.bg{display:none;position:fixed;top:0px;left:0px;width: 100%;height:300px;background: #000000;z-index:998;opacity: 0.5;}
+			.tankuang{ display:none;
+				width: 800px;
+				height: 400px;
+				/*background-color: #FFFFFF;*/
+				border-radius: 10px ;position: fixed;
+				bottom: 50px;
+				z-index: 999;
+				padding-top: 90px;
+				background: #FFFFFF url(img/mtk_boy.png) no-repeat;
+				background-position:left bottom;				
+			}
+			.guanbi{font-family:"宋体";
+				font-size: 30px;position: absolute;top:0px;right:0px;cursor: pointer;}
+			.tijiao{
+				width: 240px;
+				height: 50px;
+				background: #EA5D64;
+				color: #fff;
+				font-weight: 500;
+				line-height: 50px;
+				border-radius: 10px;
+				text-align: center;
+				font-size: 20px;
+				cursor: pointer;
+				margin-left: 30px;
+				margin-top: 10px;
+				
+				
+			}
+			.tankuang span{
+				position: relative;
+				top: 10px;
+				font-family:"宋体";
+				font-size: 30px;
+				font-weight: normal;
+				color: red;
+			}
+			.tk_l{
+				width: 400px;
+				height: 110px;
+				float: left;
+				padding-left: 60px;
+				font-size: 24px;
+				line-height: 30px;
+			}
+			.tk_r{
+				float: left;
+				width:390px;
+				border-left: 1px solid #ccc;
+				padding-left: 20px;
+			}
+			.tankuang input{
+				width: 310px;
+				height: 45px;
+				padding-left: 5px;
+				margin-bottom: 10px;
+				
+			}
+			.tankuang select{
+				width: 120px;
+				height: 42px;
+				margin-right: 15px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				var xV=($(window).width()-800)/2;
+				$(".tankuang").css("left",xV+"px");
+				$(".bg").css("height",$(window).height()+"px");
+				$(".guanbi").click(function(){
+					$(".tankuang").hide();
+					$(".bg").hide();
+				});
+				$(".yuyue").attr("href","javascript:;");
+				$(".yuyue").click(function(){
+					var topV=($(window).height()-$(".con").height())/2;
+					var leftV=($(window).width()-$(".con").width())/2;
+					$(".con").css({"top":topV+"px","left":leftV+"px"});
+					
+					$(".tankuang").show();
+					$(".bg").show();
+				
+				});
+				
+				$(window).resize(function(){
+					$(".bg").css("height",$(window).height()+'px');
+					if($(".bg").css("display")=="block"){
+					var topV=($(window).height()-$(".tankuang").height())/2;
+					var leftV=($(window).width()-$(".tankuang").width())/2;
+					$(".tankuang").css({"top":topV+"px","left":leftV+"px"});
+					}
+				});
+				
+				var phone=$("#phone").val();
+				var reg1=/^[\u4e00-\u9fa5]{2,4}$/;
+				var reg2=/^1[0-9]{10}$/;
+				$("#name").blur(function(){
+					
+					var name=$("#name").val();
+					if(reg1.test(name)){
+						
+						$("#s1").html("√").css("color","#008000");
+					}else{
+						$("#s1").html("×").css("color","red");
+					}
+				});
+				$("#phone").blur(function(){
+					
+					var phone=$("#phone").val();
+					if(reg2.test(phone)){
+						
+						$("#s2").html("√").css("color","#008000");
+						
+					}else{
+						$("#s2").html("×").css("color","red");
+					}
+				});
+				
+			});
+		window.onload=function(){
+			$("body").scrollTop(0);
+			var p=document.getElementById("p");
+		var ci=document.getElementById("ci");
+		var c=document.getElementById("c");
+		
+		p.onchange=function(){
+			ci.options.length=0;//清空city里的option
+			if(p.value=="小学"){
+				ci.add(new Option("一年级","一年级",true,true),null);
+				ci.add(new Option("二年级","二年级"),null);
+				ci.add(new Option("三年级","三年级"),null);
+				ci.add(new Option("四年级","四年级"),null);
+				ci.add(new Option("五年级","五年级"),null);
+				ci.add(new Option("六年级","六年级"),null);
+				
+			}
+			if(p.value=="小升初"){
+				ci.add(new Option("小升初","小升初",true,true),null);
+				
+			}
+			if(p.value=="初中"){
+				ci.add(new Option("初一","初一",true,true),null);
+				ci.add(new Option("初二","初二"),null);
+				ci.add(new Option("初三","初三"),null);
+			}
+			if(p.value=="中考冲刺"){
+				ci.add(new Option("中考冲刺","中考冲刺",true,true),null);
+				
+			}
+			if(p.value=="高中"){
+				ci.add(new Option("高一","高一",true,true),null);
+				ci.add(new Option("高二","高二"),null);
+				ci.add(new Option("高三","高三"),null);
+				
+			}
+			if(p.value=="高考冲刺"){
+				ci.add(new Option("高考冲刺","高考冲刺",true,true),null);
+				
+			}
+			
+		}
+
+		}
+		
+		</script>
+
+	</head>
+	<body>
+				<div class="bg"></div>
+		<div class="tankuang">
+			<div class="tk_l">
+				超小组&nbsp;分层次&nbsp;强互动<br/>
+				全流程强化中小学生学习动力
+			</div>
+			<div class="tk_r">
+				<form action="" method="post">
+					<input type="text" name="" id="name" value="" placeholder="姓名"/><span id="s1">×</span><!--√-->
+					<br/><input type="text" name="" id="phone" value=""  placeholder="手机号"/><span id="s2">×</span> 
+					
+					<br/>
+					<select id="p" style="width: 90px;">
+					<option value="小学">小学</option>
+					<option value="小升初">小升初</option>
+					<option value="初中">初中</option>
+					<option value="中考冲刺">中考冲刺</option>
+					<option value="高中">高中</option>
+					<option value="高考冲刺">高考冲刺</option>
+
+					</select>
+					<select id="ci" style="width: 90px;">
+						<option value="一年级">一年级</option>
+						<option value="二年级">二年级</option>
+						<option value="三年级">三年级</option>
+						<option value="四年级">四年级</option>
+						<option value="五年级">五年级</option>
+						<option value="六年级">六年级</option>
+					</select>
+					<select id="c" style="width: 90px;">
+						<option value="语文">语文</option>
+						<option value="数学">数学</option>
+						<option value="英语">英语</option>
+						
+					</select>
+
+
+					<div class="tijiao">免费预约</div>
+				</form>
+			</div>
+			
+			
+			
+			<div class="guanbi">×</div>
+		</div>
+
+		<div class="top_bg">
+					<div class="top">
+						<div class="logo"><img src="img/logo.png" /></div>
+						<ul>
+							<a href="index.html">
+								<li>首页</li>
+							</a>
+							<a href="teachidea.html">
+								<li>教学理念</li>
+							</a>
+							<a href="javascript:;">
+								<li class="ac">课程体系</li>
+							</a>
+							<a href="teacher.html">
+								<li>师资力量</li>
+							</a>
+							<a href="flowchart.html">
+								<li>学习流程</li>
+							</a>
+							<a href="class.html">
+								<li>优问课堂</li>
+							</a>
+							<a href="one.html">
+								<li>在线一对一</li>
+							</a>
+						</ul>
+						<span>电话:400-777-5029</span>
+					</div>
+					
+				</div>
+		<div id="contain"  >
+			
+			<!--第一屏幕-->
+			<div class="section">
+				
+				<div class="content_1 wow bounceInDown" >
+					<img src="img/banner.png" width="100%"/>
+					<a style="width: 190px;height: 60px;line-height: 60px;position: relative;top:-200px;left: 409px;" class="yuyue" href="">免费预约</a>
+					
+				</div>
+			</div>
+			
+			
+			<div class="section" style="">
+				<div class="content_out wow bounceInDown" >
+					<div class="content_2">
+					
+					<p style="text-align: center;">创新<span>课程模式</span>    多元化<span>教学风格</span></p>
+					<div class="pic1" style="margin-left: 88px;"></div>
+					<div class="pic2"></div>
+					<div class="pic3"></div>
+					<div id="" style="clear: both;">
+						
+					</div>
+					<a  class="btn" href="" style=" margin-left:487px;margin-top: 100px;color: #fff;">免费预约</a>
+					
+				</div>
+				</div>
+			</div>
+			
+			<div class="section">
+				
+				<div class="cont_2 wow bounceInDown" style="position: relative;top: -90px;">
+					<div id="tex1" style="margin-top: 150px;">
+						科学<span>课程体系</span>踏实学好<span>每一步</span>
+					</div>
+					<div class="contex" style="margin-top: 50px;">
+						<ul class="contex_1" style="margin-bottom: 50px;">
+							<li class="c_active" id="contex_1_1">小學</li>
+							<li id="contex_1_2">初中</li>
+							<li id="contex_1_3">高中</li>
+							<li id="contex_1_4">冲刺</li>
+							<div style="clear:both">
+								
+							</div>
+						</ul>
+						<div>
+						<ul id="contex_2_1" class="contex_2">
+							<li class="c_active" id="contex_2_1_1">语文</li>
+							<li id="contex_2_1_2">数学</li>
+							<li id="contex_2_1_3">英语</li>
+							
+							<div style="clear:both">
+								
+							</div>
+						</ul>
+						<ul id="contex_2_2" class="contex_2">
+							<li class="" id="contex_2_2_1">语文</li>
+							<li id="contex_2_2_2">数学</li>
+							<li id="contex_2_2_3">英语</li>
+							
+							<li id="contex_2_2_4">物理</li>
+							<li id="contex_2_2_5">化学</li>
+							
+							<div style="clear:both">
+								
+							</div>
+						</ul>
+						<ul id="contex_2_3" class="contex_2">
+							<li class="" id="contex_2_3_1">语文</li>
+							<li id="contex_2_3_2">数学</li>
+							<li id="contex_2_3_3">英语</li>
+							
+							<li id="contex_2_3_4">物理</li>
+							<li id="contex_2_3_5">化学</li>
+							<div style="clear:both">
+								
+							</div>
+						</ul>
+						<ul id="contex_2_4" class="contex_2">
+							<li class="" id="contex_2_4_1">小五班</li>
+							<li id="contex_2_4_2">预备班</li>
+							<li id="contex_2_4_3">中考冲刺</li>
+							<li id="contex_2_4_4">高考冲刺</li>
+							
+							<div style="clear:both">
+								
+							</div>
+						</ul>
+						</div>
+						
+						
+						
+						<div class="contex_3" style="margin-top: 50px;">
+							<!--小学语文-->
+							<div id="fagkuai_1_1"  class="contex_3_1">
+								<ul style="width: 1130px;margin: auto;">
+									<li style="margin-left:0px" ><p style="padding-top:125px ;">一年級</p><div style="height: 175px;padding-top: 20px;">
+										1.让学生掌握听读识字和看拼音识字的方法<br/>
+										2.学习结合上下文和生 活实际了解词句意思<br/>
+										3.用普通话积极的、有创造性地进行口语
+									</div></li>
+									<li ><p style="padding-top:100px ;color: #FDB62B;">二年級</p><div style="background-color: #FDB62B;height: 200px;padding-top: 25px;">
+										1.学会用部首查字法查字典学习音序查字法<br/>
+										2.能正确流利和尽可能有感情地朗读课文<br/>
+										3.能够仿写比较短小的课文段创设情景，鼓励学生乐于表达、交流<br/>
+									</div></li>
+									<li><p style="padding-top:75px;color: #FC8B37;">三年級</p><div style=" background-color: #FC8B37;height:225px;padding-top: 30px;">
+										1.学会用部首查字法查字典学习音序查字法<br/>
+										2.能正确流利和尽可能有感情地朗读课文<br/>
+										3.能够仿写比较短小的课文段创设情景，鼓励学生乐于表达、交流<br/>
+									</div></li>
+									<li><p style="padding-top:50px;color: #FC8B37;">四年級</p><div style="background-color: #FC8B37;height: 250px;padding-top: 60px;">
+										1.辨析形近字、同音字，学习多音字<br/>
+										2.概括文字的主要内容或提炼重要信息<br/>
+										3.能不拘形式地写下见闻、感受和想象<br/>
+										4.把握主要内容，并能简要简述<br/>
+									</div></li>
+									<li><p style="padding-top:25px;color: #FE5454;">五年級</p><div style="background-color: #FE5454;height: 275px;padding-top: 60px;">
+										1.养成主动识字的习惯<br/>
+										2.体会表达的思想感情<br/>
+										3.开始练习写真实的生活能清楚明白地表述见闻<br/>
+									</div></li>
+									<li ><p style="padding-top:0px;color: #FE5454;">六年級</p><div style="background-color: #FE5454;height: 300px;padding-top: 60px;">
+										1.养成主动识字的习惯<br/>
+										2.体会表达的思想感情<br/>
+										3.开始练习写真实的生活能清楚明白地表述见闻<br/>
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>
+								
+							</div>
+							<!--
+                            	描述：小学数学
+                            -->
+							<div id="fagkuai_1_2"  style="display: none;" class="contex_3_1">
+								<ul style="width: 1130px;margin: auto;">
+									<li style="margin-left:0px" ><p style="padding-top:125px ;">一年級</p><div style="height: 175px;padding-top: 20px;">
+										1.认识和理解数，建立数感，掌握简单的加减法<br/>
+										2.认识物体的形状和位置关系，拥有简单的几何观念<br/>
+										3.认识时间，学会找规律、统计等技能
+									</div></li>
+									<li ><p style="padding-top:100px ;color: #FDB62B;">二年級</p><div style="background-color: #FDB62B;height: 200px;padding-top: 10px;">
+										1.高阶的加减法、简单的乘除法<br/>
+										2.认识锐角、钝角，会画对称轴和平移旋转<br/>
+										3.长度单位及重量单位的认识<br/>
+										4.认识统计表统计图，解决简单的统计问题
+									</div></li>
+									<li><p style="padding-top:75px;color: #FC8B37;">三年級</p><div style=" background-color: #FC8B37;height:225px;padding-top: 30px;">
+										1.高阶的乘除法，认识小数、分数以及其简单计算<br/>
+										2.简单图形的周长、面积计算，长度、面积、重量单位<br/>
+										3.认识时间、年月日<br/>
+										4.平均数、统计与可能性
+									</div></li>
+									<li><p style="padding-top:50px;color: #FC8B37;">四年級</p><div style="background-color: #FC8B37;height: 250px;padding-top: 60px;">
+										1.大数的认识、四则运算及运算定律<br/>
+										2.掌握线、图形的分类以及平行垂直等关系<br/>
+										3.用统计解决实际问题
+									</div></li>
+									<li><p style="padding-top:25px;color: #FE5454;">五年級</p><div style="background-color: #FE5454;height: 275px;padding-top: 60px;">
+										1.小数混合四则运算、简易方程<br/>
+										2.因数和倍数、分数的性质及加减运算<br/>
+										3.统计与可能性
+									</div></li>
+									<li ><p style="padding-top:0px;color: #FE5454;">六年級</p><div style="background-color: #FE5454;height: 300px;padding-top: 60px;">
+										1.有较强的独立识字能力
+										2.初步领悟文章基本的表达方法
+										3.能写简单的记实作文和想象作文
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>
+								
+								
+							</div>
+							<!--小学英语-->
+							<div id="fagkuai_1_3" style="display: none;"  class="contex_3_1">
+								<ul style="width: 1130px;margin: auto;">
+									<li style="margin-left:0px" ><p style="padding-top:125px ;">一年級</p><div style="height: 175px;padding-top: 20px;">
+										1.学习了一些基础的生活名词，例如教室、水果、家人、小游戏等等。<br/>
+										2.学习到了一些简单的陈述句、特殊疑问句及其回答等语法知识点
+									</div></li>
+									<li ><p style="padding-top:100px ;color: #FDB62B;">二年級</p><div style="background-color: #FDB62B;height: 200px;padding-top: 25px;">
+										1.学习了有关职业、食物、房间摆设等知识，继续加深了对特殊疑问句的学习和理解
+									</div></li>
+									<li><p style="padding-top:75px;color: #FC8B37;">三年級</p><div style=" background-color: #FC8B37;height:225px;padding-top: 30px;">
+										1.主要学习了超市、公园等场景的应用，以及数词的加深。 语法涉及到There be句型、一般现在时态和现在进行时态
+									</div></li>
+									<li><p style="padding-top:50px;color: #FC8B37;">四年級</p><div style="background-color: #FC8B37;height: 250px;padding-top: 60px;">
+										1.学习了询问时间、询问交通方式、询问方向等知识点。 语法涉及到情态动词的使用、询问频率的特殊疑问词
+									</div></li>
+									<li><p style="padding-top:25px;color: #FE5454;">五年級</p><div style="background-color: #FE5454;height: 275px;padding-top: 60px;">
+										1.基础知识的加深，语法知识的拓展，以及时态语法的应用
+									</div></li>
+									<li ><p style="padding-top:0px;color: #FE5454;">六年級</p><div style="background-color: #FE5454;height: 300px;padding-top: 60px;">
+										1.主要学习了超市、公园等场景的应用，以及数词的加深。 语法涉及到There be句型、一般现在时态和现在进行时态
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>
+							</div>
+							<!--初中语文-->
+						<div id="fagkuai_2_1"  style="display: none;" class="contex_3_1">
+							
+								<ul style="width: 840px;">
+									<li style="width:auto;margin-left:0px" ><p style="width:auto;padding-top:50px ;">初一</p><div style="background-color: #FDB62B;width:250px;height: 250px;padding-top: 60px;">
+										1.名著阅读与文化文学常识积累<br/>
+										2.现代文快速阅读技巧<br/>
+										3.修辞方式灵活运用<br/>
+										4.作文审题，结构梳理
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">初二</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.现代文快速阅读技巧<br/>
+										2.文言文翻译技巧提升<br/>
+										3.现代文阅读文体知识总结<br/>
+										4.写作系统性思维加强
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">初三</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.综合性学习题型归纳<br/>
+										2.现代文阅读高频考点总结<br/>
+										3.文言文综合答题技巧<br/>
+										4.考前技巧、经验传授
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>
+								
+							</div>
+							<!--结束初中语文-->
+							
+							<!--初中数学-->
+							<div id="fagkuai_2_2" style="display: none;" class="contex_3_1">
+								<ul style="width: 840px;">
+									<li style="width:auto;margin-left:0px" ><p style="width:auto;padding-top:50px ;">初一</p><div style="background-color: #FDB62B;width:250px;height: 250px;padding-top: 60px;">
+										1.主要内容：整式、分式、图形的运动 、实数、 相交线与平行线、三角形、平面直角坐标系
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">初二</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.主要内容：二次根式、一元二次方程、正比例函数和反比例函数 、几何证明 、一次函数、代数方程、四边形、概率初步
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">初三</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.主要内容：相似三角形、锐角三角比、 二次函数、圆与正多边形、统计初步
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>								
+							</div>
+							<!--结束初中数学-->
+							<!--初中英语-->
+							<div id="fagkuai_2_3" style="display: none;" class="contex_3_1">
+								<ul style="width:840px;">
+									<li style="width:auto;margin-left:0px" ><p style="width:auto;padding-top:50px ;">初一</p><div style="background-color: #FDB62B;width:250px;height: 250px;padding-top: 60px;">
+										1.主要学习了一些简单词组，简单的语法知识，作为承上启下的重要年级
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">初二</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.涉及到了书信的书写格式、高科技与生活的碰撞，开始强调知识的实际应用能力。
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">初三</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.全面学习了英语的八大时态、对单词词性的学习和总结，熟练掌握对句子结构分析的能力
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>		
+								
+								
+								
+							</div>
+							<!--结束初中英语-->
+							<!--初中物理-->
+							<div id="fagkuai_2_4" style="display: none;" class="contex_3_1">
+								<ul style="width: 840px;">
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">初二</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.声、光、力基础掌握牢固<br/>
+										2.激发物理学习兴趣<br/>
+										3.基础知识提炼<br/>
+										4.题型归纳总结<br/>
+										5.书本结合实际掌握更牢
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">初三</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.解题技巧提升<br/>
+										2.易错易考知识点高频联系<br/>
+										3.中考真题专攻<br/>
+										4.考前经验传授<br/>
+										5.综合解题能力突破
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>		
+
+							</div>
+							<!--结束初中物理-->
+							<!--初中化学-->
+							<div id="fagkuai_2_5" style="display: none;"  class="contex_3_1">
+								<ul style="width: 288px;">
+									
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">初三</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.熟记元素周期表<br/>
+										2.基础化学方程式书写<br/>
+										3.常考题型归纳总结<br/>
+										4.基础实验熟练掌握<br/>
+										5.培养化学学习兴趣<br/>
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>
+								
+								
+							</div>
+							<!--结束初中化学-->
+							<!--高中语文-->
+							<div id="fagkuai_3_1" style="display: none;"  class="contex_3_1">
+								<ul style="width: 840px;">
+									<li style="width:auto;margin-left:0px" ><p style="width:auto;padding-top:50px ;">高一</p><div style="background-color: #FDB62B;width:250px;height: 250px;padding-top: 60px;">
+										1.扎实的课内基础知识<br/>
+										2.记叙文阅读赏析理解<br/>
+										3.巧解文言文实词、虚词<br/>
+										4.合理规划学科知识体系<br/>
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">高二</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.课外知识阅读积累<br/>
+										2.散文、小说阅读赏析理解<br/>
+										3.高效提升文言文阅读解题能力<br/>
+										4.写作思维、结构拓展训练<br/>
+										5.高考冲刺提前接触
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">高三</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.各类题型巧解技巧<br/>
+										2.综合阅读鉴赏能力突破<br/>
+										3.历年真题高频训练<br/>
+										4.考前高频考点针对性查漏补缺<br/>
+										5.写作高分突破点拨
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>	
+								
+								
+							</div>
+							<!--结束高中语文-->
+							<!--高中数学-->
+							<div id="fagkuai_3_2"  style="display: none;" class="contex_3_1">
+								<ul style="width: 840px;">
+									<li style="width:auto;margin-left:0px" ><p style="width:auto;padding-top:50px ;">高一</p><div style="background-color: #FDB62B;width:250px;height: 250px;padding-top: 60px;">
+										1.主要内容：集合和命题；不等式；函数的基本性质； 幂函数、指数函数和对数函数；三角比；三角函数
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">高二</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.主要内容：数列与数学归纳法、平面向量的坐标表示、 矩阵和行列式初步、算法初步、坐标平面上的直线、圆锥曲线、复数
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">高三</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.主要内容：空间直线与平面、简单几何体、排列组合 与二项式定理、概率论初步、基本统计方法
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>	
+								
+							</div>
+							<!--结束高中数学-->
+							<!--高中英语-->
+							<div id="fagkuai_3_3" style="display: none;" class="contex_3_1">
+								<ul style="width: 840px;">
+									<li style="width:auto;margin-left:0px" ><p style="width:auto;padding-top:50px ;">高一</p><div style="background-color: #FDB62B;width:250px;height: 250px;padding-top: 60px;">
+										1.重点培养做题能力，文章阅读的理解能力和听力能力
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">高二</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.系统进行知识点提炼，提高写作能力，学习做题技巧
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">高三</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.进行系统化复习，加深对高考真题的理解和掌握，高效率的进行高考复习
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>	
+								
+							</div>
+							<!--高中物理-->
+							<div id="fagkuai_3_4" style="display: none;" class="contex_3_1">
+								<ul style="width: 840px;">
+									<li style="width:auto;margin-left:0px" ><p style="width:auto;padding-top:50px ;">高一</p><div style="background-color: #FDB62B;width:250px;height: 250px;padding-top: 60px;">
+										1.匀变速直线运动<br/>
+										2.力和力的平衡<br/>
+										3.牛顿运动定律<br/>
+										4.周期运动<br/>
+										5.机械能<br/>
+										6.分子和气体定律
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">高二</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.内能 能量守恒定律<br/>
+										2.电场<br/>
+										3.电路<br/>
+										4.磁场<br/>
+										5.电磁感应<br/>
+										6.电磁波<br/>
+										7.物质的微观结构<br/>									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">高三</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.知识查漏补缺<br/>
+										2.高考经典题型案例分析<br/>
+										3.重点题型总结归纳<br/>
+										4.名师押题预测<br/>
+										5.考前心理疏导、经验技巧传授
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>	
+								
+							</div>
+							<!--高中化学-->
+							<div id="fagkuai_3_5" style="display: none;" class="contex_3_1">
+								<ul style="width: 840px;">
+									<li style="width:auto;margin-left:0px" ><p style="width:auto;padding-top:50px ;">高一</p><div style="background-color: #FDB62B;width:250px;height: 250px;padding-top: 60px;">
+										1.高级化学方程式书写<br/>
+										2.基础知识梳理巩固<br/>
+										3.培养化学学习兴趣及学习技巧v<br/>
+										4.习惯、掌握题型<br/>
+										5.基础实验掌握提高<br/>
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">高二</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.重点难点强化训练<br/>
+										2.基础知识查漏补缺<br/>
+										3.计算技巧训练<br/>
+										4.重点实验专项突破<br/>
+										5.化学思维拓展及知识网络构建<br/>									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">高三</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.历年高频易考、易错考点重点分析<br/>
+										2.答题策略和针对性题库训练<br/>
+										3.构建化学系统性知识网络<br/>
+										4.考前经验技巧传授<br/>
+										5.高考前名师押题预测<br/>
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>	
+								
+
+								
+							</div>
+							<!--小五班-->
+							<div id="fagkuai_4_1" style="display: none;" class="contex_3_1">
+								<ul style="width: 840px;">
+									<li style="width:auto;margin-left:0px" ><p style="width:auto;padding-top:50px ;">语文</p><div style="background-color: #FDB62B;width:250px;height: 250px;padding-top: 60px;">
+										1.加强课外阅读兴趣培养<br/>
+										2.修改病句解题技巧<br/>
+										3.写作手法熟练，灵活运用各种修辞手法<br/>
+										4.专题预习领先一步<br/>
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">数学</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.进一步激发学科学习兴趣<br/>
+										2.基本知识概念加强理解与深化<br/>
+										3.基本数学学习思维拓展训练<br/>
+										4.小升初专题知识领先理解
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">英语</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.词汇音标掌握扎实<br/>
+										2.基础语法加强训练<br/>
+										3.基础词汇句型专项练习<br/>
+										4.听力专题训练
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>	
+								
+								
+							</div>
+							<!--预备班-->
+							<div id="fagkuai_4_2" style="display: none;" class="contex_3_1">
+								<ul style="width: 840px;">
+									<li style="width:auto;margin-left:0px" ><p style="width:auto;padding-top:50px ;">语文</p><div style="background-color: #FDB62B;width:250px;height: 250px;padding-top: 60px;">
+										1.小升初重点知识归纳<br/>
+										2.小升初各模块专题训练<br/>
+										3.考前技巧经验传授<br/>
+										4.小升初写作能力专项点拨<br/>
+										5.历年真题训练提高应试综合解题能力
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:25px ;color: #FC8B37;">数学</p><div style="background-color: #FC8B37;width:230px;height: 275px;padding-top: 60px;">
+										1.数学考点集中训练、各类题型逐一击破<br/>
+										2.历年小升初重点、难点密集训练<br/>
+										3.考前技巧经验传授<br/>
+										4.考前针对性心理疏导<br/>
+										5.考前个性化查漏补缺
+									</div></li>
+									<li style="width:auto;margin-left:50px" ><p style="width:auto;padding-top:0px;color: #FE5454;">英语</p><div style=" background-color: #FE5454;width:230px;height: 300px;padding-top: 60px;">
+										1.历年易考重点总结归纳<br/>
+										2.小升初写作能力综合训练<br/>
+										3.听力专题训练强化技巧<br/>
+										4.阅读理解能力重点突破<br/>
+										5.重要词组、句型重点牢记
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>
+								
+								
+							</div>
+							<!--中考冲刺-->	
+							<div id="fagkuai_4_3" style="display: none;" class="contex_3_1">
+								<ul style="width: 925px;margin: auto;">
+									
+									<li ><p style="padding-top:100px ;color: #FDB62B;">语文</p><div style="background-color: #FDB62B;height: 200px;padding-top: 25px;">
+										1.中考难点专项训练、讲解<br/>
+										2.文言文综合解题能力提高<br/>
+										3.历年易考、易错考点重点讲解<br/>
+										4.名师作文押题<br/>
+										5.考前经验技巧传授<br/>
+									</div></li>
+									<li><p style="padding-top:75px;color: #FC8B37;">数学</p><div style=" background-color: #FC8B37;height:225px;padding-top: 30px;">
+										1.冲刺阶段规划指导学习方案<br/>
+										2.针对性查漏补缺专讲<br/>
+										3.各类题型解题策略总结<br/>
+										4.历年中考真题、模拟题集中讲解<br/>
+										5.考前心理疏导、技巧经验传授<br/>
+									</div></li>
+									<li><p style="padding-top:50px;color: #FC8B37;">英语</p><div style="background-color: #FC8B37;height: 250px;padding-top: 60px;">
+										1.冲刺阶段规划指导学习方案<br/>
+										2.完型答题技巧快速提升<br/>
+										3.听力专项讲解训练<br/>
+										4.考前知识点综合梳理<br/>
+										5.考前心理疏导，技巧经验传授<br/>
+									</div></li>
+									<li><p style="padding-top:25px;color: #FE5454;">物理</p><div style="background-color: #FE5454;height: 275px;padding-top: 60px;">
+										1.考前易错易考知识点重点讲解
+										2.各题型解题技巧逐一分析<br/>
+										3.反复大量熟悉中考题型<br/>
+										4.个性化查漏补缺<br/>
+										5.考前心理疏导、经验技巧传授<br/>
+									</div></li>
+									<li ><p style="padding-top:0px;color: #FE5454;">化学</p><div style="background-color: #FE5454;height: 300px;padding-top: 60px;">
+										1.大量限时答题训练<br/>
+										2.历年易错、易考、易混专讲<br/>
+										3.创新题型集中训练<br/>
+										4.考前心态调整技巧<br/>
+										5.考前经验技巧传授
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>
+								
+								
+							</div>
+							
+							<!--高考冲刺-->
+							<div id="fagkuai_4_4" style="display: none;" class="contex_3_1">
+								<ul style="width: 925px;margin: auto;">
+									
+									<li ><p style="padding-top:100px ;color: #FDB62B;">语文</p><div style="background-color: #FDB62B;height: 200px;padding-top: 25px;">
+										1.各题型专题狂练<br/>
+										2.文言文专题拓展训练<br/>
+										3.状元满分作文赏，名师解读<br/>
+										4.考前经验技巧传授<br/>
+										5.考前调整心态、正确心理引导<br/>
+									</div></li>
+									<li><p style="padding-top:75px;color: #FC8B37;">数学</p><div style=" background-color: #FC8B37;height:225px;padding-top: 30px;">
+										1.历年真题、难题、易错题高频训练<br/>
+										2.训练限时解题技巧<br/>
+										3.各题型解题技巧熟练掌握<br/>
+										4.概率、立几、概率、解几、函数，五大专题逐一击破<br/>
+										5.考前心理疏导，解题经验技巧传授<br/>
+									</div></li>
+									<li><p style="padding-top:50px;color: #FC8B37;">英语</p><div style="background-color: #FC8B37;height: 250px;padding-top: 60px;">
+										1.综合阅读理解能力重点突破<br/>
+										2.常见高考题型解题技巧掌握<br/>
+										3.重点、难点词组、短语、句型重点掌握<br/>
+										4.高考满分作文冲刺<br/>
+										5.考前心理疏导，经验技巧传授<br/>
+									</div></li>
+									<li><p style="padding-top:25px;color: #FE5454;">物理</p><div style="background-color: #FE5454;height: 275px;padding-top: 60px;">
+										1.知识查漏补缺<br/>
+										2.高考经典题型案例分析<br/>
+										3.重点题型总结归纳<br/>
+										4.名师押题预测<br/>
+										5.考前心理疏导、经验技巧传授<br/>
+									</div></li>
+									<li ><p style="padding-top:0px;color: #FE5454;">化学</p><div style="background-color: #FE5454;height: 300px;padding-top: 60px;">
+										1.解题技巧补充<br/>
+										2.高考真题狂练<br/>
+										3.各题型总结归纳<br/>
+										4.高分考生心经<br/>
+										5.考前心理疏导、经验技巧传授<br/>
+									</div></li>
+									<div style="clear: both;"></div>
+								</ul>
+								
+								
+							</div>
+							
+							
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="footer" style="position:absolute;bottom:0px;background-color: #4C4C4C;height: 60px;width:100%;line-height: 60px;">
+					<div class="foot" >
+						<input type="text" name="" id="" value=""  placeholder="姓名"/ style="margin-left: 71px;">
+					<input type="text" name="" id="" value=""  placeholder="手机号"/>
+					<input type="text" name="" id="" value=""  placeholder="电子邮箱"/>
+					<select name="" style="width: 90px;">
+						<option value="">阶段</option>
+						<option value="">小学</option>
+						<option value="">初中</option>
+						<option value="">阶段</option>
+						<option value="">冲刺</option>
+					</select>
+					<select name="" style="width: 90px;">
+						<option value="">年级</option>
+						<option value="">一年级</option>
+						<option value="">二年级</option>
+						<option value="">三年级</option>
+						<option value="">四年级</option>
+						<option value="">五年级</option>
+						<option value="">六年级</option>
+					</select>
+					<select name="" style="width: 90px;">
+						<option value="">科目</option>
+						<option value="">科目</option>
+						<option value="">科目</option>
+					</select>
+					
+					<a href="" class="yuyue" style="width: 125px;height: 40px;font-size: 18px;line-height: 40px;margin-top: 0px;display: inline-block;position: relative;top:3px">0元免费试听</a>
+					</div>
+				
+			</div>
+					
+				
+			
+			
+			
+			
+<!---------------------------->
+			
+			
+			<!--第五屏-->
+			
+			</div>
+	</div>
+	<div class="cebian">	
+		<div class="weixin"><img src="img/codepic.png"/></div>
+		<div class="kefu"></div>
+		<a href="#page1"><div class="top1"></div></a>
+		
+	</div>
+	</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.fullPage.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/wow.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#contain').fullpage({
+					navigation:true,
+				 scrollingSpeed:500,
+				css3:true,
+				verticalCentered:false,
+				anchors: ['page1', 'page2', 'page3'],
+				  scrollBar: true,
+				     afterRender: function(){
+				         wow = new WOW({
+				             animateClass: 'animated',
+				          });
+				         wow.init();
+				     },
+				afterLoad: function(anchorLink, index){
+			if(index == '3'){
+				$(".top_bg").slideUp(500);
+			}
+			if(index!='3'){
+				$(".top_bg").slideDown(500);
+			}
+		},
+
+				
+		onLeave: function(index, direction){
+			
+			
+			
+			
+		},
+
+			});
+			$("body").css("overflow","hidden");
+			new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true,
+		        nextButton: '.swiper-button-next',
+		        prevButton: '.swiper-button-prev',
+		        spaceBetween: 30,
+		         autoplay: 2000,
+		        effect: 'fade',
+		        loop:true,
+		        
+		       
+    		});
+    		
+    		//自动调整class="swiper-container"高度
+    		var sH=$(".section").css("height");
+    		
+    		sH=parseInt(sH)-90;
+			$(".content_2").css("height",sH+90+"px");
+    		$(".content_1 img").css("margin-top",sH*0.02+"px");
+    		$(".content_1").css({"padding-top":sH*0.1+"px"});
+    		$(".content_3").css("height",sH+90+"px");
+    		$(".con_3").children("ul").css("height",sH+90+"px");
+    		
+//  		$(".swiper-container").css({"height":sH*0.7+"px","margin-top":sH*0.1+"px"});
+    		$(".top1").on("click",function(){
+    			$("#fp-nav ul li:first a span").trigger("click");
+
+    		});
+    		
+    		//
+//  		function ab(){
+//  			alert($("#contex_2").children(".c_active").attr("id"));
+//  		}
+    		//contex_2出现
+    		
+    		$("#contex_1_1").mouseover(function(){
+//  			ab();
+    			
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#contex_2_1").css("display","block").siblings().css("display","none");
+    			
+    		});
+    		$("#contex_1_2").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#contex_2_2").css("display","block").siblings().css("display","none");
+    			
+    		});
+    		$("#contex_1_3").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#contex_2_3").css("display","block").siblings().css("display","none");
+    			
+    		});
+    		$("#contex_1_4").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#contex_2_4").css("display","block").siblings().css("display","none");
+    		});
+    		
+//  		contex3出现
+    		$("#contex_2_1_1").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_1_1").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_1_2").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_1_2").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_1_3").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_1_3").css("display","block").siblings().css("display","none");
+    		});
+    		
+    		$("#contex_2_2_1").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_2_1").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_2_2").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_2_2").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_2_3").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_2_3").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_2_4").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_2_4").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_2_5").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_2_5").css("display","block").siblings().css("display","none");
+    		});
+    		
+    			$("#contex_2_3_1").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_3_1").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_3_2").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_3_2").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_3_3").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_3_3").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_3_4").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_3_4").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_3_5").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_3_5").css("display","block").siblings().css("display","none");
+    		});
+    		
+    			$("#contex_2_4_1").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_4_1").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_4_2").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_4_2").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_4_3").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_4_3").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_4_4").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_4_4").css("display","block").siblings().css("display","none");
+    		});
+    		$("#contex_2_4_5").mouseover(function(){
+    			$(this).parent().children().removeClass("c_active");
+    			$(this).addClass("c_active");
+    			$("#fagkuai_4_5").css("display","block").siblings().css("display","none");
+    		});
+    		
+    		
+		})
+	</script>
+
+</html>

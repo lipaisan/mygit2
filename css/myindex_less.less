@@ -1,0 +1,158 @@
+
+.ul(){
+    list-style: none;
+    
+}
+.section{
+    overflow: hidden;
+}
+.con_3_li(){
+    background-size:100% ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.con_3 ul{
+    
+   .ul();
+   width: 100%;
+   height: 100%;
+   background-image: url(../img/tab3-bg.png);
+   background-repeat: no-repeat;
+   background-size:  cover;
+   text-align: center;
+   margin-top: 0px;
+   
+   
+   
+  
+}
+.con_3 li{
+     .con_3_li();
+     margin:auto;
+     margin-top: 10px;
+     font-size: 24px;
+     color: white;
+     line-height: 63px;
+}
+.con_3 p{
+    
+    padding-top: 23px;
+     padding-bottom: 14px;
+    font-size: 34px;
+}
+.con_4 .p1{
+    text-align: center;
+    margin-top: 46px;
+    font-size: 34px;
+}
+.con_4 .p2{
+    text-align: center;
+     margin-top: 27px;
+    font-size: 22px;
+    color: #999;
+}
+.picShow{
+    width: 1200px;
+    height: 324px;
+    margin: auto;
+   position: relative;
+}
+
+.pic1 img{
+    width: 170px;
+   
+    position: absolute;
+     left: 32px;
+    top: 75px;
+}
+.pic2 img{
+    width: 100px;
+   
+     position: absolute;
+    left: 240px;
+    top: 45px;
+}
+.pic3 img{
+    width: 233px;
+   
+    position: absolute;
+    left: 465px;
+    top: 45px;
+}
+.pic4 img{
+    width: 131px;
+   
+    position: absolute;
+    left: 780px;
+   
+}
+.pic5 img{
+    width: 175px;
+   
+    position: absolute;
+     left: 976px;
+    top: 77px;
+   
+    
+}
+.footer{
+    width: 100%;
+    height: 60px;
+    background: #4C4C4C;
+    line-height: 60px;
+    margin-top: 30px;
+}
+.footer input{
+    height: 35px;
+    width: 212px;
+}
+.foot{
+    width: 1200px;
+    margin: auto;
+}
+.footer select{
+     height: 35px;
+}
+.wH(@a,@b){
+    width: @a;
+    height: @b;
+}
+.img(@src){
+    background-image: url(@src);
+    
+}
+.cebian{
+    position: absolute;
+    right: 60px;
+    bottom: 210px;
+    .weixin{
+        .wH(60px,60px);
+         .img("\.\./img/wechatcode.png");
+         cursor: pointer;
+         img{
+             display: none;
+             position: relative;
+             top: 0;
+             left: -117px;
+         }
+         &:hover img{
+             display: block;
+         }
+    }
+    .kefu{
+        .wH(60px,60px);
+       margin-top: 10px;
+        cursor: pointer;
+        .img("\.\./img/lineserver.png")
+    }
+    .top{
+        .wH(60px,60px);
+       margin-top: 10px;
+        cursor: pointer;
+        .img(".\.\/img/backtop.png");
+        &:hover{
+            .img(".\.\/img/gotop.png");
+        }
+    }
+}
+

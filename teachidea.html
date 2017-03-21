@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>		
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/teachidea.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"/>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+				<style type="text/css">
+			.bg{display:none;position:fixed;top:0px;left:0px;width: 100%;height:300px;background: #000000;z-index:998;opacity: 0.5;}
+			.tankuang{ display:none;
+				width: 800px;
+				height: 400px;
+				/*background-color: #FFFFFF;*/
+				border-radius: 10px ;position: fixed;
+				bottom: 50px;
+				z-index: 999;
+				
+				padding-top: 90px;
+				background: #FFFFFF url(img/mtk_boy.png) no-repeat;
+				background-position:left bottom;
+				
+			}
+			.guanbi{font-family:"宋体";
+				font-size: 30px;position: absolute;top:0px;right:0px;cursor: pointer;}
+			.tijiao{
+				width: 240px;
+				height: 50px;
+				background: #EA5D64;
+				color: #fff;
+				font-weight: 500;
+				line-height: 50px;
+				border-radius: 10px;
+				text-align: center;
+				font-size: 20px;
+				cursor: pointer;
+				margin-left: 30px;
+				margin-top: 10px;
+				
+				
+			}
+			.tankuang span{
+				position: relative;
+				top: 10px;
+				font-family:"宋体";
+				font-size: 30px;
+				font-weight: normal;
+				color: red;
+			}
+			.tk_l{
+				width: 400px;
+				height: 110px;
+				float: left;
+				padding-left: 60px;
+				font-size: 24px;
+				line-height: 30px;
+			}
+			.tk_r{
+				float: left;
+				width:390px;
+				border-left: 1px solid #ccc;
+				padding-left: 20px;
+			}
+			.tankuang input{
+				width: 310px;
+				height: 45px;
+				padding-left: 5px;
+				margin-bottom: 10px;
+				
+			}
+			.tankuang select{
+				width: 120px;
+				height: 42px;
+				margin-right: 15px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				var xV=($(window).width()-800)/2;
+				$(".tankuang").css("left",xV+"px");
+				$(".bg").css("height",$(window).height()+"px");
+				$(".guanbi").click(function(){
+					$(".tankuang").hide();
+					$(".bg").hide();
+				});
+				$(".yuyue").attr("href","javascript:;");
+				$(".yuyue").click(function(){
+					var topV=($(window).height()-$(".con").height())/2;
+					var leftV=($(window).width()-$(".con").width())/2;
+					$(".con").css({"top":topV+"px","left":leftV+"px"});
+					
+					$(".tankuang").show();
+					$(".bg").show();
+				
+				});
+				
+				$(window).resize(function(){
+					$(".bg").css("height",$(window).height()+'px');
+					if($(".bg").css("display")=="block"){
+					var topV=($(window).height()-$(".tankuang").height())/2;
+					var leftV=($(window).width()-$(".tankuang").width())/2;
+					$(".tankuang").css({"top":topV+"px","left":leftV+"px"});
+					}
+				});
+				
+				var phone=$("#phone").val();
+				var reg1=/^[\u4e00-\u9fa5]{2,4}$/;
+				var reg2=/^1[0-9]{10}$/;
+				$("#name").blur(function(){
+					
+					var name=$("#name").val();
+					if(reg1.test(name)){
+						
+						$("#s1").html("√").css("color","#008000");
+					}else{
+						$("#s1").html("×").css("color","red");
+					}
+				});
+				$("#phone").blur(function(){
+					
+					var phone=$("#phone").val();
+					if(reg2.test(phone)){
+						
+						$("#s2").html("√").css("color","#008000");
+						
+					}else{
+						$("#s2").html("×").css("color","red");
+					}
+				});
+				
+			});
+		window.onload=function(){
+			$("body").scrollTop(0);
+			var p=document.getElementById("p");
+		var ci=document.getElementById("ci");
+		var c=document.getElementById("c");
+		
+		p.onchange=function(){
+			ci.options.length=0;//清空city里的option
+			if(p.value=="小学"){
+				ci.add(new Option("一年级","一年级",true,true),null);
+				ci.add(new Option("二年级","二年级"),null);
+				ci.add(new Option("三年级","三年级"),null);
+				ci.add(new Option("四年级","四年级"),null);
+				ci.add(new Option("五年级","五年级"),null);
+				ci.add(new Option("六年级","六年级"),null);
+				
+			}
+			if(p.value=="小升初"){
+				ci.add(new Option("小升初","小升初",true,true),null);
+				
+			}
+			if(p.value=="初中"){
+				ci.add(new Option("初一","初一",true,true),null);
+				ci.add(new Option("初二","初二"),null);
+				ci.add(new Option("初三","初三"),null);
+			}
+			if(p.value=="中考冲刺"){
+				ci.add(new Option("中考冲刺","中考冲刺",true,true),null);
+				
+			}
+			if(p.value=="高中"){
+				ci.add(new Option("高一","高一",true,true),null);
+				ci.add(new Option("高二","高二"),null);
+				ci.add(new Option("高三","高三"),null);
+				
+			}
+			if(p.value=="高考冲刺"){
+				ci.add(new Option("高考冲刺","高考冲刺",true,true),null);
+				
+			}
+			
+		}
+
+		}
+		
+		</script>
+
+	</head>
+	<body>
+				<div class="bg"></div>
+		<div class="tankuang">
+			<div class="tk_l">
+				超小组&nbsp;分层次&nbsp;强互动<br/>
+				全流程强化中小学生学习动力
+			</div>
+			<div class="tk_r">
+				<form action="" method="post">
+					<input type="text" name="" id="name" value="" placeholder="姓名"/><span id="s1">×</span><!--√-->
+					<br/><input type="text" name="" id="phone" value=""  placeholder="手机号"/><span id="s2">×</span> 
+					
+					<br/>
+					<select id="p" style="width: 90px;">
+					<option value="小学">小学</option>
+					<option value="小升初">小升初</option>
+					<option value="初中">初中</option>
+					<option value="中考冲刺">中考冲刺</option>
+					<option value="高中">高中</option>
+					<option value="高考冲刺">高考冲刺</option>
+
+					</select>
+					<select id="ci" style="width: 90px;">
+						<option value="一年级">一年级</option>
+						<option value="二年级">二年级</option>
+						<option value="三年级">三年级</option>
+						<option value="四年级">四年级</option>
+						<option value="五年级">五年级</option>
+						<option value="六年级">六年级</option>
+					</select>
+					<select id="c" style="width: 90px;">
+						<option value="语文">语文</option>
+						<option value="数学">数学</option>
+						<option value="英语">英语</option>
+						
+					</select>
+
+
+					<div class="tijiao">免费预约</div>
+				</form>
+			</div>
+			
+			
+			
+			<div class="guanbi">×</div>
+		</div>
+
+		<div class="top_bg " >
+					<div class="top">
+						<div class="logo"><img src="img/logo.png" /></div>
+						<ul>
+							<a href="index.html" >
+								<li>首页</li>
+							</a>
+							<a href="javascript:;">
+								<li class="ac">教学理念</li>
+							</a>
+							<a href="subject.html">
+								<li>课程体系</li>
+							</a>
+							<a href="teacher.html">
+								<li>师资力量</li>
+							</a>
+							<a href="flowchart.html">
+								<li>学习流程</li>
+							</a>
+							<a href="class.html">
+								<li>优问课堂</li>
+							</a>
+							<a href="one.html">
+								<li>在线一对一</li>
+							</a>
+						</ul>
+						<span>电话:400-777-5029</span>
+					</div>
+					
+				</div>
+		<div id="contain"  >		
+			<!--第一屏幕-->
+			<div class="section">
+				
+				<div class="content_1">
+					<p class="wow bounceInDown" data-wow-delay="0.3s">激发学习动力  提高学习能力  强化学习毅力</p>
+					<p class="wow bounceInDown" data-wow-delay="0.2s">全流程优化学习力</p>
+					<a style="width: 190px;height: 60px;line-height: 60px;margin-top: 86px;" class="yuyue wow bounceInDown" href="" data-wow-delay="0.1s">免费预约</a>
+					
+				</div>
+			</div>
+			<!--2-->
+			<div class="section">
+				<div class="content_2 wow bounceIn" >
+					<p>我们的学习力</p>
+				</div>
+			</div>
+			<!--3-->
+			<div class="section">
+				<div class="content_3 wow bounceIn" style="padding-top: 150px;">
+					<p style="top: 50px;">激发学习动力</p>
+					<img style="display: block;margin:auto;" src="img/teachidea/cont2bg.png" />
+				</div>
+			</div>
+			<!--4-->
+			<div class="section">
+				<div class="content_3 wow bounceIn" style="background-color: #fff;padding-top: 100px;">
+					<p style="color: #78D432;">激发学习动力</p>
+					<img src="img/teachidea/cont3bg.png"  style="display:block;margin: auto;"/>
+				</div>
+			</div>
+			<!--5-->
+			<div class="section">
+				<div id="last" class="content_3 wow bounceInUp" style="background-color: #FFFCF7;padding-top: 100px;">
+					<p style="color: #FFA800;">激发学习动力</p>
+					<img src="img/teachidea/cont4bg.png"  style="display: block;margin: auto;"/>
+				<div class="footer" style="position: absolute;bottom:90px">
+					<div class="foot">
+						<input type="text" name="" id="" value=""  placeholder="姓名"/ style="margin-left: 71px;">
+					<input type="text" name="" id="" value=""  placeholder="手机号"/>
+					<input type="text" name="" id="" value=""  placeholder="电子邮箱"/>
+					<select name="" style="width: 90px;">
+						<option value="">阶段</option>
+						<option value="">小学</option>
+						<option value="">初中</option>
+						<option value="">阶段</option>
+						<option value="">冲刺</option>
+					</select>
+					<select name="" style="width: 90px;">
+						<option value="">年级</option>
+						<option value="">一年级</option>
+						<option value="">二年级</option>
+						<option value="">三年级</option>
+						<option value="">四年级</option>
+						<option value="">五年级</option>
+						<option value="">六年级</option>
+					</select>
+					<select name="" style="width: 90px;">
+						<option value="">科目</option>
+						<option value="">科目</option>
+						<option value="">科目</option>
+					</select>
+					
+					<a href="" class="yuyue" style="width: 125px;height: 40px;font-size: 15px;line-height: 40px;margin-top: 0px;display: inline-block;position: relative;top:3px">0元免费试听</a>
+					</div>
+					<div id="banquan" style="width: 100%;height: 60px;background-color:#2D2D2D;color: #D5D5D5;text-align: center; font-size: 12px;line-height: 40px;" >
+						<div>Copyright © 上海优问文化传播有限公司（沪ICP备16050428号）</div>
+						<div style="line-height:10px">沪公网安备 31011002000908号</div>
+					</div>
+					
+				</div>
+				</div>
+			</div>
+			
+<!---------------------------->
+			
+			
+			<!--第五屏-->
+			
+			</div>
+	</div>
+	<div class="cebian">	
+		<div class="weixin"><img src="img/codepic.png"/></div>
+		<div class="kefu"></div>
+		<div class="top1"></div>
+		
+	</div>
+	</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.mousewheel.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.fullPage.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/wow.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".section").eq(4).mousewheel(function(event, delta){
+								if(delta==1){
+									$(".footer").css({
+										"bottom":"90px"
+									});
+									
+								}
+								
+			});
+			$('#contain').fullpage({
+					navigation:true,
+				     verticalCentered:false,
+				     css3:true,
+				     paddingTop:70,
+				     anchors: ['page1', 'page2', 'page3'],
+				     scrollBar: true,
+				     scrollingSpeed:500,
+				     afterRender: function(){
+				         wow = new WOW({
+				             animateClass: 'animated',
+				          });
+				         wow.init();
+				     },
+					afterLoad: function(anchorLink, index){
+						
+						
+						if(index == 5){
+							$(".section").eq(4).mousewheel(function(event, delta){
+								if(delta==-1&&index==5){
+									$(".footer").animate({
+										"bottom":"150px"
+									});									
+								}								
+							});						
+						}						
+					},
+					onLeave:function(anchorLink,index){
+						
+					}
+				 });
+				 //隐藏滚动条 
+				 $("body").css("overflow","hidden");
+			new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true,
+		        nextButton: '.swiper-button-next',
+		        prevButton: '.swiper-button-prev',
+		        spaceBetween: 30,
+		         autoplay: 2000,
+		        effect: 'fade',
+		        loop:true,
+		        
+		       
+    		});
+    		
+    		//自动调整class="swiper-container"高度
+    		var sH=$(".section").css("height");
+    		
+    		sH=parseInt(sH)-90;
+			$(".content_2").css("height",sH+90+"px");
+    		$(".content_1").css("height",sH+"px");
+    		$(".content_3").css("height",sH+90+"px");
+    		$("#last").css("height",sH+90+"px");
+    		$(".con_3").children("ul").css("height",sH+90+"px");
+    		$(".top1").on("click",function(){
+    			$("#fp-nav ul li:first a span").trigger("click");
+
+    		});
+    		
+    		//
+//  		function ab(){
+//  			alert($("#contex_2").children(".c_active").attr("id"));
+//  		}
+    		//contex_2出现
+    		
+    		
+		})
+	</script>
+
+</html>

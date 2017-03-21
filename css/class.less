@@ -1,0 +1,314 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "微软雅黑";
+  box-sizing: border-box;
+}
+.top_bg {
+  width: 100%;
+  background: #fff;
+  
+  
+  z-index: 500;
+  border-bottom: 1px solid #ccc;
+}
+.top {
+  height: 90px;
+  width: 1200px;
+  margin: auto;
+  background: #fff;
+}
+.logo {
+  margin-top: 26px;
+  float: left;
+}
+.top ul {
+  float: left;
+  margin-left: 35px;
+}
+.top a {
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+.top li {
+  height: 90px;
+  width: 80px;
+  line-height: 90px;
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+.top a:hover li {
+  box-sizing: border-box;
+  border-bottom: 3px solid red;
+  margin-bottom: 0px;
+  color: red;
+}
+.ac{
+    box-sizing: border-box;
+  border-bottom: 3px solid red;
+  margin-bottom: 0px;
+  color: red;
+}
+.li_xuanzhong {
+  box-sizing: border-box;
+  border-bottom: 3px solid red;
+  margin-bottom: 0px;
+  color: red;
+}
+.top span {
+  font-size: 16px;
+  margin-left: 15px;
+  float: left;
+  display: inline-block;
+  background-image: url(../img/phone.png);
+  background-size: 20px 20px;
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  line-height: 90px;
+}
+
+
+
+.footer input{
+    height: 35px;
+    width: 212px;
+}
+.foot{
+    width: 1200px;
+    margin: auto;
+}
+.footer select{
+     height: 35px;
+}
+.wH(@a,@b){
+    width: @a;
+    height: @b;
+}
+.img(@src){
+    background-image: url(@src);
+    
+}
+.cebian{
+    position: fixed;
+    right: 60px;
+    bottom: 210px;
+    .weixin{
+        .wH(60px,60px);
+         .img("\.\./img/wechatcode.png");
+         cursor: pointer;
+         img{
+             display: none;
+             position: relative;
+             top: 0;
+             left: -117px;
+         }
+         &:hover img{
+             display: block;
+         }
+    }
+    .kefu{
+        .wH(60px,60px);
+       margin-top: 10px;
+        cursor: pointer;
+        .img("\.\./img/lineserver.png")
+    }
+    .top1{
+        .wH(60px,60px);
+       margin-top: 10px;
+        cursor: pointer;
+        .img(".\.\/img/backtop.png");
+        &:hover{
+            .img(".\.\/img/gotop.png");
+        }
+    }
+}
+.yuyue {
+  margin: auto;
+  display: block;
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: red;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  margin-top: 20px;
+ 
+}
+.content_1{
+    text-align: center;
+    margin-top: 90px;
+    .img("\.\./img/teach/teacher_banner.png");
+    width: 100%;
+    height: 400px;
+    background-size: 100% 100%;
+    padding: 1px;
+   
+    
+}
+
+
+.ul(){
+    list-style: none;
+    
+}
+
+.con_3_li(){
+    background-size:100% ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.con_3 ul{
+    
+   .ul();
+   width: 100%;
+   height: 100%;
+   background: url(../img/tab3-bg.png);
+   text-align: center;
+   margin-top: 0px;
+   
+   
+   
+  
+}
+.main_contain {
+    padding-top: 66px;
+    width: 1000px;
+    margin: 0px auto;
+    .main_left{
+        float: left;
+        width: 170px;
+        height: 160px;
+        div{
+            width: 170px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 63px;
+            margin-bottom: 10px;
+            
+            
+            
+        }
+        div:nth-child(1){
+             background-image:url(../img/class/star.png);
+            background-repeat: no-repeat;
+            background-position: 20px center;
+            &:hover{
+                background:url(../img/class/star1.png) no-repeat left center ;
+            }
+        }
+        
+        div:nth-child(2){
+             background-image:url(../img/class/tip.png);
+            background-repeat: no-repeat;
+            background-position: 20px center;
+            &:hover{
+                background:url(../img/class/tip1.png) no-repeat left center ;
+            }
+        }
+         div:nth-child(3){
+             background-image:url(../img/class/screen.png);
+            background-repeat: no-repeat;
+            background-position: 20px center;
+            &:hover{
+                background:url(../img/class/screen1.png) no-repeat left center ;
+            }
+        }
+         div:nth-child(4){
+             background-image:url(../img/class/doctor.png);
+            background-repeat: no-repeat;
+            background-position: 20px center;
+            &:hover{
+                
+                background:url(../img/class/doctor1.png) no-repeat left center ;
+            }
+        }
+    }
+    
+    .main_center{
+        float: left;
+        width: 600px;
+        height: 128px;
+        margin-left: 20px;
+        img{
+            margin-right: 10px;
+        }
+        div{
+            display: inline-block;
+           
+            h1{
+            
+            font-size: 20px;
+            color: #333;
+            font-weight: 300;
+         }
+          p{
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+          }
+        }
+        
+        
+    }
+    .main_right{
+         float: left;
+ 
+        width: 200px;
+        height: 400px;
+        ul{
+            list-style: none;
+            li{
+                width: 200px;
+                height: 20px;
+                color: #666;
+                font-size: 14px;
+                
+            }
+            li:nth-child(1){
+                border-left: 3px solid #FF5F68;
+                width: 360px;
+                height: 34px;
+                color: black;
+                font-size: 22px;
+                  padding-left: 10px;
+                  margin-bottom: 10px;
+              
+            }
+        }
+    }
+    .page{
+        width: 500px;
+        margin: 0px auto;
+        ul{
+           
+            
+            font-size: 14px;
+            list-style: none;
+            li{
+                float: left;
+                height: 35px;
+                line-height: 35px;
+                padding: 0 10px;
+                border:1px solid #ddd;
+                color: #337AB7;
+                &:hover{
+                    background: #ccc;
+                }
+                
+            }
+        }
+    }
+}
+#center_1,#center_2,#center_3,#center_4{
+    position: absolute;
+    display: none;
+}
+.cd{
+   
+}
